@@ -61,7 +61,7 @@ void Connector::dnsresp(std::vector<dns_result *> results){
 }
 
 int Connector::setupFd(int af){
-    fd = socket(AF_INET, SOCK_STREAM, 0);
+    fd = socket(af, SOCK_STREAM, 0);
     if(fd < 0){
         LOG(ERROR) << "Unable to create fd, errno " << errno;
         serv->close_connection(connid);
